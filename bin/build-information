@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+import subprocess
+import datetime
+import json
+
+
+try:
+    git_version = subprocess.check_output(
+        ['git', 'describe'],
+        stderr=subprocess.STDOUT,
+        shell=False,
+    ).decode().strip()
+
+except:
+    git_version = 'UNKNOWN'
+
+timestamp = str(datetime.datetime.now())
+
+build_information = {
+    'gitVersion': git_version,
+    'timestamp': timestamp,
+}
+
+print(json.dumps(build_information))

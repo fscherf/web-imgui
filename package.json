@@ -1,0 +1,23 @@
+{
+  "name": "web-imgui",
+  "version": "0.0.0",
+  "description": "Web ImGui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fscherf/web-imgui.git"
+  },
+  "author": "Florian Scherf <mail@florianscherf.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fscherf/web-imgui/issues"
+  },
+  "homepage": "https://github.com/fscherf/web-imgui/README.md",
+  "files": [
+    "web-imgui/*",
+    "web-imgui/*/*"
+  ]
+}
