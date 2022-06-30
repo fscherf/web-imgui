@@ -140,9 +140,6 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,emacs,eclipse
 /.sass-cache
-/web-imgui
+/dist
+/node_modules
 /packages
-/scss/*.css
-/scss/*.map
-/ts/*.js
-/ts/*.map

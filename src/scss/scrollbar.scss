@@ -1,0 +1,51 @@
+.web-imgui-window *::-webkit-scrollbar {
+    border-radius: $web-imgui-scrollbar-width;
+    width: $web-imgui-scrollbar-width;
+}
+
+.web-imgui-window *::-webkit-scrollbar-track {
+    border-radius: $web-imgui-scrollbar-width;
+}
+
+.web-imgui-window *::-webkit-scrollbar-thumb {
+    border-radius: $web-imgui-scrollbar-width;
+}
+
+// themes: dark ---------------------------------------------------------------
+.web-imgui-window.web-imgui-theme-dark *::-webkit-scrollbar-track {
+    background: $web-imgui-dark-ScrollbarBg;
+}
+
+.web-imgui-window.web-imgui-theme-dark *::-webkit-scrollbar-thumb {
+    background: $web-imgui-dark-ScrollbarGrab;
+}
+
+.web-imgui-window.web-imgui-theme-dark *::-webkit-scrollbar-thumb:hover {
+    background: $web-imgui-dark-ScrollbarGrabHovered;
+}
+
+// themes: light --------------------------------------------------------------
+.web-imgui-window.web-imgui-theme-light *::-webkit-scrollbar-track {
+    background: $web-imgui-light-ScrollbarBg;
+}
+
+.web-imgui-window.web-imgui-theme-light *::-webkit-scrollbar-thumb {
+    background: $web-imgui-light-ScrollbarGrab;
+}
+
+.web-imgui-window.web-imgui-theme-light *::-webkit-scrollbar-thumb:hover {
+    background: $web-imgui-light-ScrollbarGrabHovered;
+}
+
+// themes: classic --------------------------------------------------------------
+.web-imgui-window.web-imgui-theme-classic *::-webkit-scrollbar-track {
+    background: $web-imgui-classic-ScrollbarBg;
+}
+
+.web-imgui-window.web-imgui-theme-classic *::-webkit-scrollbar-thumb {
+    background: $web-imgui-classic-ScrollbarGrab;
+}
+
+.web-imgui-window.web-imgui-theme-classic *::-webkit-scrollbar-thumb:hover {
+    background: $web-imgui-classic-ScrollbarGrabHovered;
+}

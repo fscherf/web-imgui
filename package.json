@@ -17,7 +17,13 @@
   },
   "homepage": "https://github.com/fscherf/web-imgui/README.md",
   "files": [
-    "web-imgui/*",
-    "web-imgui/*/*"
-  ]
+    "dist/*/*",
+    "src/*/*"
+  ],
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "http-server": "^14.1.1",
+    "sass": "^1.53.0",
+    "typescript": "^4.7.4"
+  }
 }

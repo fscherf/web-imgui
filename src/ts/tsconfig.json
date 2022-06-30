@@ -1,8 +1,11 @@
 {
-  "include": ["./ts/*"],
+  "include": ["./*.ts"],
   "compilerOptions": {
     "target": "ES6",
     "sourceMap": true,
+    "inlineSources": true,
     "removeComments": true,
+    "outDir": "../../dist/js",
+    "allowJs": true
   }
 }

@@ -1,0 +1,230 @@
+// window ---------------------------------------------------------------------
+.web-imgui-window {
+
+    // positioning
+    position: absolute;
+    width: $web-imgui-window-default-width;
+    height: $web-imgui-window-default-height;
+
+    // grid
+    display: grid;
+    grid-template-columns: 10px auto 10px;
+    grid-template-rows: max-content auto 10px;
+
+    // styling
+    box-shadow: $web-imgui-shadow;
+    font-family: $web-imgui-font-family;
+    font-size: $web-imgui-font-size;
+}
+
+// title bar ------------------------------------------------------------------
+.web-imgui-window .web-imgui-window-title-bar {
+
+    // positioning
+    display: flex;
+    align-items: center;
+
+    // grid
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    // styling
+    user-select: none;
+    border-top-left-radius: $web-imgui-window-border-radius;
+    border-top-right-radius: $web-imgui-window-border-radius;
+    padding-left: $web-imgui-window-title-bar-padding;
+    padding-right: calc(#{$web-imgui-window-title-bar-padding} / 2);
+}
+
+// icons
+.web-imgui-window .web-imgui-window-title-bar i {
+    font-size: $web-imgui-font-size;
+}
+
+.web-imgui-window .web-imgui-window-title-bar i:hover {
+    cursor: pointer;
+}
+
+// center
+.web-imgui-window .web-imgui-window-title-bar-title {
+
+    // positioning
+    width: 100%;
+    margin-top: 2px;  // TODO: This seems to be necessary because of the font
+
+    // grid
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    // styling
+    padding-left: $web-imgui-window-title-bar-padding;
+}
+
+// body -----------------------------------------------------------------------
+.web-imgui-window .web-imgui-window-body {
+
+    // positioning
+    overflow: auto;
+
+    // grid
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    // styling
+    border-bottom-left-radius: $web-imgui-window-border-radius;
+    border-bottom-right-radius: $web-imgui-window-border-radius;
+}
+
+.web-imgui-window .web-imgui-window-body .web-imgui-window-content {
+
+    // grid
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    // styling
+    padding: $web-imgui-window-content-padding;
+}
+
+/* resize / move ----------------------------------------------------------- */
+.web-imgui-window .web-imgui-window-body-overlay {
+    display: none;
+}
+
+.web-imgui-window.web-imgui-window-moving .web-imgui-window-body-overlay,
+.web-imgui-window.web-imgui-window-resizing .web-imgui-window-body-overlay {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    display: unset;
+}
+
+.web-imgui-window-resize-w {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    cursor: w-resize;
+}
+
+.web-imgui-window-resize-e {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    cursor: e-resize;
+}
+
+.web-imgui-window-resize-s {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    cursor: s-resize;
+}
+
+.web-imgui-window-resize-sw {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    cursor: sw-resize;
+}
+
+.web-imgui-window-resize-se {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    cursor: se-resize;
+}
+
+// themes: dark ---------------------------------------------------------------
+// window
+.web-imgui-window.web-imgui-theme-dark {
+    color: $web-imgui-dark-Text;
+}
+
+// title bar
+.web-imgui-window.web-imgui-theme-dark .web-imgui-window-title-bar {
+    background-color: $web-imgui-dark-TitleBg;
+    border: $web-imgui-window-border-width solid $web-imgui-dark-Border;
+}
+
+
+// body
+.web-imgui-window.web-imgui-theme-dark .web-imgui-window-body {
+    background-color: $web-imgui-dark-WindowBg;
+    border-right: $web-imgui-window-border-width solid $web-imgui-dark-Border;
+    border-bottom: $web-imgui-window-border-width solid $web-imgui-dark-Border;
+    border-left: $web-imgui-window-border-width solid $web-imgui-dark-Border;
+}
+
+// active
+.web-imgui-window.web-imgui-window-active.web-imgui-theme-dark .web-imgui-window-title-bar {
+    background-color: $web-imgui-dark-TitleBgActive;
+}
+
+// themes: light --------------------------------------------------------------
+// window
+.web-imgui-window.web-imgui-theme-light {
+    color: $web-imgui-light-Text;
+}
+
+// title bar
+.web-imgui-window.web-imgui-theme-light .web-imgui-window-title-bar {
+    background-color: $web-imgui-light-TitleBg;
+    border: $web-imgui-window-border-width solid $web-imgui-light-Border;
+}
+
+// body
+.web-imgui-window.web-imgui-theme-light .web-imgui-window-body {
+    background-color: $web-imgui-light-WindowBg;
+    border-right: $web-imgui-window-border-width solid $web-imgui-light-Border;
+    border-bottom: $web-imgui-window-border-width solid $web-imgui-light-Border;
+    border-left: $web-imgui-window-border-width solid $web-imgui-light-Border;
+}
+
+// active
+.web-imgui-window.web-imgui-window-active.web-imgui-theme-light .web-imgui-window-title-bar {
+    background-color: $web-imgui-light-TitleBgActive;
+}
+
+// themes: classic ------------------------------------------------------------
+// window
+.web-imgui-window.web-imgui-theme-classic {
+    color: $web-imgui-classic-Text;
+}
+
+// title bar
+.web-imgui-window.web-imgui-theme-classic .web-imgui-window-title-bar {
+    background-color: $web-imgui-classic-TitleBg;
+    border: $web-imgui-window-border-width solid $web-imgui-classic-Border;
+}
+
+// body
+.web-imgui-window.web-imgui-theme-classic .web-imgui-window-body {
+    background-color: $web-imgui-classic-WindowBg;
+    border-right: $web-imgui-window-border-width solid $web-imgui-classic-Border;
+    border-bottom: $web-imgui-window-border-width solid $web-imgui-classic-Border;
+    border-left: $web-imgui-window-border-width solid $web-imgui-classic-Border;
+}
+
+// active
+.web-imgui-window.web-imgui-window-active.web-imgui-theme-classic .web-imgui-window-title-bar {
+    background-color: $web-imgui-classic-TitleBgActive;
+}

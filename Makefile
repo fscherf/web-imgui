@@ -1,38 +1,45 @@
 .PHONY: clean
 
-all: web-imgui/css/web-imgui.css \
-	 web-imgui/js/web-imgui.js \
-	 web-imgui/build-information.json
+all: \
+	dist/css/web-imgui.css \
+	dist/js/web-imgui.js
 
 clean:
 	rm -rf \
-		web-imgui \
+		dist \
 		packages \
-		.sass-cache \
-		scss/*.css \
-		scss/*.map \
-		ts/*.js \
-		ts/*.map
+		.sass-cache
 
-# web-imgui ###################################################################
-web-imgui:
-	mkdir web-imgui
-	mkdir web-imgui/js
-	mkdir web-imgui/css
-	ln -s ts web-imgui/ts
+distclean:
+	rm -rf node_modules
 
-web-imgui/css/web-imgui.css: scss/*.scss | web-imgui
-	scss scss/web-imgui.scss scss/web-imgui.css
-	rm -rf web-imgui/css
-	cp -r scss web-imgui/css
+node_modules: package.json
+	npm install
 
-web-imgui/js/web-imgui.js: ts/*.ts | web-imgui
-	tsc
-	rm -rf web-imgui/js
-	cp -r ts web-imgui/js
+# dist ########################################################################
+dist: | node_modules
+	# setup dist directory
+	mkdir -p dist
+	mkdir -p dist/fonts
+	mkdir -p dist/css
+	mkdir -p dist/js
 
-web-imgui/build-information.json: | web-imgui
-	bin/build-information > web-imgui/build-information.json
+	# copy fonts
+	cp -r fonts/* dist/fonts
+	cp -r node_modules/@fortawesome/fontawesome-free/webfonts/* dist/fonts
+
+# css
+dist/css/web-imgui.css: src/scss/*.scss | dist node_modules
+	# build css
+	npx sass \
+		src/scss/web-imgui.scss dist/css/web-imgui.css \
+		--load-path=node_modules \
+		--embed-sources
+
+# js
+dist/js/web-imgui.js: src/ts/*.ts src/ts/tsconfig.json | dist node_modules
+	# build js
+	npx tsc -p src/ts/tsconfig.json
 
 # release package #############################################################
 package: all
@@ -40,5 +47,5 @@ package: all
 	mv `npm pack` packages
 
 # dev tools ###################################################################
-server:
-	python3 -m http.server --directory=examples
+http-server:
+	npx http-server examples -c-1 $(args)

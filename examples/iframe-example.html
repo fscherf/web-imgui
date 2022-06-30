@@ -1,14 +1,18 @@
 <html>
   <head>
-    <link rel="stylesheet" href="/web-imgui/css/web-imgui.css" />
+    <link rel="stylesheet" href="/dist/css/web-imgui.css" />
   </head>
   <body>
-    <div class="web-imgui-window">Hello World</div>
+    <div id="web-imgui"></div>
 
     <script type="module">
-      import { WebImGui } from "/web-imgui/js/web-imgui.js";
+      import { WebImGui } from "/dist/js/web-imgui.js";
 
-      new WebImGui();
+      window.webImGui = new WebImGui(
+        document.querySelector('#web-imgui'),
+      );
+
+      window.webImGui.createWindow();
     </script>
   </body>
 </html>

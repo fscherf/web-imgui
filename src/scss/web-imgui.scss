@@ -1,0 +1,17 @@
+// font awesome
+$fa-font-path: "../fonts";
+
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/v4-shims";
+
+// Dear ImGui
+@import "dear-imgui-colors.scss";
+
+// web imgui
+@import "variables.scss";
+@import "scrollbar.scss";
+@import "fonts.scss";
+@import "window.scss";
