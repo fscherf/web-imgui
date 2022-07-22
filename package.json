@@ -1,6 +1,6 @@
 {
   "name": "web-imgui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Web ImGui",
   "main": "index.js",
   "scripts": {
