@@ -1,7 +1,7 @@
 {
   "include": ["./*.ts"],
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2016",
     "sourceMap": true,
     "inlineSources": true,
     "removeComments": true,

@@ -1,4 +1,7 @@
+ADDRESS=localhost
+
 .PHONY: clean
+
 
 all: \
 	dist/css/web-imgui.css \
@@ -48,4 +51,4 @@ package: all
 
 # dev tools ###################################################################
 http-server:
-	npx http-server examples -c-1 $(args)
+	npx http-server examples -c-1 -a $(ADDRESS)

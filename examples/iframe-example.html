@@ -3,16 +3,13 @@
     <link rel="stylesheet" href="/dist/css/web-imgui.css" />
   </head>
   <body>
-    <div id="web-imgui"></div>
-
+    <script type="module" src="/dist/js/web-imgui.js"></script>
     <script type="module">
-      import { WebImGui } from "/dist/js/web-imgui.js";
-
-      window.webImGui = new WebImGui(
-        document.querySelector('#web-imgui'),
-      );
-
-      window.webImGui.createWindow();
+      window.addEventListener('load', () => {
+        webImGui.getWindow('foo');
+        webImGui.getWindow('bar');
+        webImGui.getWindow('baz');
+      });
     </script>
   </body>
 </html>
